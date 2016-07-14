@@ -1,24 +1,6 @@
-# README
+# Untitled Bedroom Project
+This is a project for me to work more with rails, and to provide a 'Hub' in my bedroom
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*** Ruby Version ***
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby 2.2.2
