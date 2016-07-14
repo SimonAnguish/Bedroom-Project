@@ -1,0 +1,15 @@
+<div class="main">
+	<div class="content">
+		<div class="container">
+			<ul class="">
+				<% @reminders.each do |reminder| %>
+					<li class="">
+						<%= link_to reminder,  method: :delete do %><i class='material-icons'>close</i><% end %>
+						<p class=""><%= reminder.content %></p>
+					</li>
+				<% end %>
+			</ul>
+			<%= link_to 'New Reminder', "reminders/new" %>
+		</div>
+	</div>
+</div>

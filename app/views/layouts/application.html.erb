@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bedroom</title>
+		<%= csrf_meta_tags %>
+
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+
+	<body>
+		<ul class="nav nav-left" role="navigation">
+			<li><%= link_to 'welcome'		do %><i class="material-icons">home</i><% end %></li>
+			<li><%= link_to 'weather'		do %><i class="material-icons">cloud</i><% end %></li>
+			<li><%= link_to 'news'			do %><i class="material-icons">chrome_reader_mode</i><% end %></li>
+			<li><%= link_to 'reminders'	do %><i class="material-icons">event</i><% end %></li>
+		</ul>
+		<%= yield %>
+	</body>
+</html>
