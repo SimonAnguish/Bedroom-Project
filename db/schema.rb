@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708172018) do
+ActiveRecord::Schema.define(version: 20160718162952) do
+
+  create_table "news_stories", force: :cascade do |t|
+    t.text     "headline"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reminders", force: :cascade do |t|
     t.text     "content"
+    t.date     "for_date"
+    t.boolean  "checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

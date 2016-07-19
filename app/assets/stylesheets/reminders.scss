@@ -1,3 +1,18 @@
 // Place all the styles related to the Reminders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reminders_list {
+	width: 80%;
+	margin: auto;
+}
+
+.reminder_item:hover {
+	background: #F5F5F5;
+}
+
+.add_remidner_icon {
+	float: right;
+	font-size: 4em;
+	color: blue;
+}

@@ -1,7 +1,42 @@
-<div class="main">
-	<div class="content">
-		<h1>Burlington, Vermont</h1>
-		<%= @forecast.currently.icon %>
-		<h2><%= @forecast.currently.temperature %></h2>
+<div class="weather_wrapper">
+	<div class="today_weather_wrapper mdl-grid">
+		<div class="current_temp mdl-cell mdl-cell--8-col">
+			<h1><%= @forecast.currently.temperature.round() %>&deg;</h1>
+			<i class='material-icons'><%= get_forecast_icon(@forecast.currently.icon) %></i>
+		</div>
+		
+		<div class="more_current_info mdl-cell mdl-cell--4-col">
+			<ul class="mdl-list">
+				<% if @forecast.currently.nearestStormDistance != 0 %>
+					<li>Nearest Storm: <%= @forecast.currently.nearestStormDistance %> miles away</li>
+				<% end %>
+				<% if @forecast.daily.data.first.precipProbability*100 != 0 %>
+					<li><%= (@forecast.daily.data.first.precipProbability*100).round() %>% chance of <%= @forecast.daily.data.first.precipType %></li>
+				<% end %>
+			</ul>
+			<ul class="mdl-list">
+				<li>Feels Like: <%= @forecast.currently.apparentTemperature.round() %>&deg;</li>
+				<li>Dew Point: <%= @forecast.currently.dewPoint.round() %>&deg;</li>
+				<li>Humidity: <%= (@forecast.currently.humidity*100).round() %>%</li>
+				<li>Wind Speed: <%= @forecast.currently.windSpeed %> mph <%= get_wind_direction(@forecast.currently.windBearing) %></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="next_week mdl-grid">
+		<% @forecast.daily.data.take(5).each do |daily_forecast| %>
+			<div class="">
+				<div class="mdl-card mdl-shadow--2dp forecast_weekly">
+					<div class="mdl-card__title">
+						<h3 class="mdl-card__title-text"><%= Time.at(daily_forecast.time.to_i).strftime("%a") %></h3>
+					</div>
+					
+					<i class="material-icons"><%= get_forecast_icon(daily_forecast.icon) %></i>
+	<!-- 				<%= daily_forecast.icon %> -->
+					<h4 class="temp-max"><%= daily_forecast.temperatureMax.round() %>&deg;</h4><h4 class="temp-min"><%= daily_forecast.temperatureMin.round() %>&deg;</h4>
+					<p>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>

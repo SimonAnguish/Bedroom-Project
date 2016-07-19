@@ -1,5 +1,21 @@
-<div class="main">
-	<div class="container">
-		<h1>Hello my name is Simon</h1>
+<div class="home_wrapper">
+	<div class="home-weather-side">
+		<h1><%= @forecast.currently.temperature.round() %>&deg;F</h1>
+	</div>
+	
+	<div class="home-news-story-list">
+		<ul>
+			<% @stories.take(5).each do |story| %>
+				<li><%= story.headline %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="home-reminders-list">
+		<ul>
+			<% @reminders.take(4).each do |reminder| %>
+				<li><%= reminder.content %></li>
+			<% end %>
+		</ul>
 	</div>
 </div>

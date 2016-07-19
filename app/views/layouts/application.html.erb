@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<title>Bedroom</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 		<%= csrf_meta_tags %>
+		<% @page_name = request.env['PATH_INFO'] %>
+		<% @page_name.slice!(0) %>
 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,11 +13,21 @@
 
 	<body>
 		<ul class="nav nav-left" role="navigation">
-			<li><%= link_to 'welcome'		do %><i class="material-icons">home</i><% end %></li>
+			<li><%= link_to '/'				do %><i class="material-icons">home</i><% end %></li>
 			<li><%= link_to 'weather'		do %><i class="material-icons">cloud</i><% end %></li>
-			<li><%= link_to 'news'			do %><i class="material-icons">chrome_reader_mode</i><% end %></li>
-			<li><%= link_to 'reminders'	do %><i class="material-icons">event</i><% end %></li>
+			<li><%= link_to 'news'			do %><i class="material-icons">subject</i><% end %></li>
+			<li><%= link_to 'reminders'		do %><i class="material-icons">assignment_turned_in</i><% end %></li>
+			<li><%= link_to 'plex' 			do %><i class="material-icons">tv</i><% end %></li>
+			<li><%= link_to 'bills'			do %><i class="material-icons">monetization_on</i><% end %></li>
+			<li><%= link_to 'stats'			do %><i class="material-icons">timeline</i><% end %></li>
 		</ul>
-		<%= yield %>
+		
+		
+		<header>
+			<h4><%= @page_name.capitalize %></h4>
+		</header>
+<!-- 		<div class="main"> -->
+			<%= yield %>
+<!-- 		</div> -->
 	</body>
 </html>

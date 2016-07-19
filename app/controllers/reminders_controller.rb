@@ -16,6 +16,11 @@ class RemindersController < ApplicationController
 		end
 	end
 	
+	def update
+		Reminder.find(params[:id]).update_attributes(:checked => true)
+		redirect_to '/reminders'
+	end
+	
 	def destroy
 		Reminder.find(params[:id]).delete
 		redirect_to '/reminders'
@@ -23,6 +28,6 @@ class RemindersController < ApplicationController
 	
 	private
 		def reminder_params
-			params.require(:reminder).permit(:content)
+			params.require(:reminder).permit(:content, :for_date, :checked)
 		end
 end

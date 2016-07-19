@@ -1,3 +1,25 @@
 // Place all the styles related to the Weather controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.forecast_weekly {
+	display: inline-block;
+	text-align: center;
+	background: #BBDEFB;
+	
+	.mdl-card__title {
+		background: #64B5F6;
+	}
+}
+
+.current_temp {
+	text-align: center;
+	
+	i {
+		font-size: 10em;
+	}
+}
+
+.temp-min {
+	color: #9E9E9E;
+}

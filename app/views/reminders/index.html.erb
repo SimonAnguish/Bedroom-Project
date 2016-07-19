@@ -1,15 +1,25 @@
-<div class="main">
-	<div class="content">
-		<div class="container">
-			<ul class="">
+<div class="reminders_wrapper">
+<!-- 	<div class="content"> -->
+<!-- 		<div class="container"> -->
+			<ul class="mdl-list mdl-shadow--2dp reminders_list">
 				<% @reminders.each do |reminder| %>
-					<li class="">
-						<%= link_to reminder,  method: :delete do %><i class='material-icons'>close</i><% end %>
-						<p class=""><%= reminder.content %></p>
+					<li class="mdl-list__item mdl-list__item-two-line reminder_item">
+						<span class="mdl-list__item-primary-content">
+							<% if reminder.checked %>
+								<i class='material-icons mdl-list__item-icon'>done</i>
+							<% else %>
+								<%= link_to reminder, method: :patch, :class => 'mdl-list__item-secondary-action' do %>
+									<i class='material-icons mdl-list__item-icon'>crop_din</i>
+								<% end %>
+							<% end %>
+							<span><%= reminder.content %></span>
+							<span class="mdl-list__item-text-body"><%= reminder.for_date.strftime("%D") %></span>
+						</span>
+						
 					</li>
 				<% end %>
 			</ul>
-			<%= link_to 'New Reminder', "reminders/new" %>
-		</div>
-	</div>
+			<%= link_to "reminders/new" do %><i class="material-icons add_reminder_icon">add_circle</i><% end %>
+<!-- 		</div> -->
+<!-- 	</div> -->
 </div>

@@ -5,5 +5,16 @@ class PagesController < ApplicationController
 	
 	def home
 		@forecast = ForecastIO.forecast(44.4547, -73.2058)
+		@stories = NewsStory.all
+		@reminders = Reminder.all
+	end
+	
+	def plex
+	end
+	
+	def bills
+	end
+	
+	def stats
 	end
 end

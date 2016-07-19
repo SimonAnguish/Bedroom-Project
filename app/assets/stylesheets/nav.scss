@@ -1,0 +1,28 @@
+.nav {
+	background: #e4e4e4;
+	width: 10em;
+	min-height: 100%;
+	margin-right: 1em;
+	padding: 0;
+	
+	li {
+		text-align: center;
+		height: 10em;
+		
+		> * {
+			height: 10em;
+		}
+		
+		i {
+			color: #a7aaae;
+			height: 2.125em;
+			line-height: 2.125em;
+			font-size: 4em;
+		}
+	}
+}
+
+.nav-left {
+	float: left;
+	clear: right;
+}

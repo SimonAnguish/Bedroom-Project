@@ -18,33 +18,32 @@
  * Custom SCSS
 */
 
-body {
-    margin: 0;
+* {
+    font-family: "Roboto", sans-serif;
 }
 
-.nav {
-    background: #455A64;
-    width: 10em;
-    margin-right: 1em;
-    padding: 0;
+body, html {
+    margin: 0;
+    height: 100%;
+    position: relative;
+/*    background: #212121;*/
+}
+
+header {
+    background: rgb(84, 110, 122);
+    height: 3em;
+/*    line-height: 2em;*/
+    text-align: center;
+    padding: .25em 0 .25em;
     
-    li {
-        text-align: center;
-        height: 10em;
-        
-        > * {
-            height: 10em;
-        }
-        
-        i {
-            color: #E0E0E0;
-        }
+    h4 {
+        margin-top: 0;
+        font-weight: 100;
+        color: #eeeeee;
     }
 }
 
-.nav-left {
-    float: left;
-    clear: right;
-}
-
+@import "nav.scss";
+@import "pages.scss";
+@import "weather.scss";
 @import "reminders.scss";
