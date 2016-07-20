@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # REMINDERS
-Reminder.create!(content: "Style Reminders", for_date: "2016-07-19", checked: false)
-Reminder.create!(content: "Format Weather page", for_date: "2016-07-18", checked: false)
+Reminder.create!(content: "Style Reminders", for_date: Date.tomorrow, checked: false)
+Reminder.create!(content: "Format Weather page", for_date: Date.today, checked: false)
 
 # NEWS STORIES
 NewsStory.create!(headline: "Florida Man Attacks Snake with Penis", content: "Local Florida Man Aaron Brunet attempted the other day to fight off a boa constrictor with his own penis. The snake has since died.")

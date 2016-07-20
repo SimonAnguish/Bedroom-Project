@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 	def home
 		@forecast = ForecastIO.forecast(44.4547, -73.2058)
 		@stories = NewsStory.all
-		@reminders = Reminder.all
+		@reminders = Reminder.all.where("for_date >= ?", Date.today.to_s).order(:for_date)
 	end
 	
 	def plex

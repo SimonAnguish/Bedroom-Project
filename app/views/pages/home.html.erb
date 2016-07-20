@@ -4,17 +4,27 @@
 	</div>
 	
 	<div class="home-news-story-list">
-		<ul>
+		<ul class="mdl-list mdl-shadow--2dp">
 			<% @stories.take(5).each do |story| %>
-				<li><%= story.headline %></li>
+				<li class="mdl-list__item"><%= story.headline %></li>
 			<% end %>
 		</ul>
 	</div>
 	
 	<div class="home-reminders-list">
-		<ul>
-			<% @reminders.take(4).each do |reminder| %>
-				<li><%= reminder.content %></li>
+		<ul class="mdl-list mdl-shadow--2dp">
+			<% @reminders.each do |reminder| %>
+				<li class="mdl-list__item mdl-list__item--two-line reminder_item">
+					<span class="mdl-list__item-primary-content">
+						<% if reminder.checked %>
+							<i class='material-icons mdl-list__item-icon'>done</i>
+						<% else %>
+							<i class='material-icons mdl-list__item-icon'>crop_din</i>
+						<% end %>
+						<span><%= reminder.content %></span>
+						<span class="mdl-list__item-sub-title">Due: <%= reminder.for_date.strftime("%D") %></span>
+					</span>
+				</li>
 			<% end %>
 		</ul>
 	</div>

@@ -13,7 +13,7 @@
 								<% end %>
 							<% end %>
 							<span><%= reminder.content %></span>
-							<span class="mdl-list__item-sub-title"><%= reminder.for_date.strftime("%D") %></span>
+							<span class="mdl-list__item-sub-title">Due: <%= reminder.for_date.strftime("%D") %></span>
 						</span>
 						
 					</li>
@@ -33,14 +33,16 @@
 									<% end %>
 								<% end %>
 								<span><%= reminder.content %></span>
-								<span class="mdl-list__item-sub-title"><%= reminder.for_date.strftime("%D") %></span>
+								<span class="mdl-list__item-sub-title">Due: <%= reminder.for_date.strftime("%D") %></span>
 							</span>
 						</li>
 					<% end %>
 				</ul>
 			<% end %>
 			
-			<%= link_to "reminders/new" do %><i class="material-icons add_reminder_icon">add_circle</i><% end %>
+			<%= link_to "reminders/new" do %>
+				<i class="material-icons add_reminder_icon">add_circle</i>
+			<% end %>
 <!-- 		</div> -->
 <!-- 	</div> -->
 </div>
