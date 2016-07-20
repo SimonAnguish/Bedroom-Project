@@ -4,11 +4,16 @@
 
 .forecast_weekly {
 	display: inline-block;
+	max-width: 150px;
 	text-align: center;
 	background: #BBDEFB;
 	
 	.mdl-card__title {
 		background: #64B5F6;
+	}
+	
+	i {
+		font-size: 4em;
 	}
 }
 
@@ -20,6 +25,11 @@
 	}
 }
 
+.temp-max {
+	font-size: 1.5em;
+}
+
 .temp-min {
 	color: #9E9E9E;
+	font-size: 1.5em;
 }

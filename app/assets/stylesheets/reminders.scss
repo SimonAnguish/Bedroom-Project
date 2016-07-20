@@ -4,15 +4,25 @@
 
 .reminders_list {
 	width: 80%;
-	margin: auto;
+	margin: 1em auto;
 }
 
 .reminder_item:hover {
 	background: #F5F5F5;
 }
 
-.add_remidner_icon {
-	float: right;
+.add_reminder_icon {
+	position: absolute;
+	right: 2em;
+	top: 1em;
 	font-size: 4em;
-	color: blue;
+	color: #8BC34A;
+}
+
+.overdue_reminders_header {
+	font-weight: 100;
+}
+
+.field {
+	text-align: center;
 }

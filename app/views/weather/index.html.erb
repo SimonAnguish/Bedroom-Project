@@ -23,18 +23,18 @@
 		</div>
 	</div>
 	
-	<div class="next_week mdl-grid">
-		<% @forecast.daily.data.take(5).each do |daily_forecast| %>
-			<div class="">
-				<div class="mdl-card mdl-shadow--2dp forecast_weekly">
-					<div class="mdl-card__title">
-						<h3 class="mdl-card__title-text"><%= Time.at(daily_forecast.time.to_i).strftime("%a") %></h3>
-					</div>
-					
+	<div class="next_week">
+		<% @forecast.daily.data.take(8).each do |daily_forecast| %>
+			<div class="mdl-card mdl-shadow--2dp forecast_weekly">
+				<div class="mdl-card__title">
+					<h3 class="mdl-card__title-text"><%= Time.at(daily_forecast.time.to_i).strftime("%a") %></h3>
+				</div>
+				<div class="mdl-card__supporting-text">
 					<i class="material-icons"><%= get_forecast_icon(daily_forecast.icon) %></i>
-	<!-- 				<%= daily_forecast.icon %> -->
-					<h4 class="temp-max"><%= daily_forecast.temperatureMax.round() %>&deg;</h4><h4 class="temp-min"><%= daily_forecast.temperatureMin.round() %>&deg;</h4>
-					<p>
+				</div>
+				<div class="mdl-card__actions mdl-card--border">
+					<span class="temp-max"><%= daily_forecast.temperatureMax.round() %>&deg;</span>
+					<span class="temp-min"><%= daily_forecast.temperatureMin.round() %>&deg;</span>
 				</div>
 			</div>
 		<% end %>

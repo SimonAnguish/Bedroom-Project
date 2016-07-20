@@ -3,22 +3,43 @@
 <!-- 		<div class="container"> -->
 			<ul class="mdl-list mdl-shadow--2dp reminders_list">
 				<% @reminders.each do |reminder| %>
-					<li class="mdl-list__item mdl-list__item-two-line reminder_item">
+					<li class="mdl-list__item mdl-list__item--two-line reminder_item">
 						<span class="mdl-list__item-primary-content">
 							<% if reminder.checked %>
 								<i class='material-icons mdl-list__item-icon'>done</i>
 							<% else %>
-								<%= link_to reminder, method: :patch, :class => 'mdl-list__item-secondary-action' do %>
+								<%= link_to reminder, method: :patch do %>
 									<i class='material-icons mdl-list__item-icon'>crop_din</i>
 								<% end %>
 							<% end %>
 							<span><%= reminder.content %></span>
-							<span class="mdl-list__item-text-body"><%= reminder.for_date.strftime("%D") %></span>
+							<span class="mdl-list__item-sub-title"><%= reminder.for_date.strftime("%D") %></span>
 						</span>
 						
 					</li>
 				<% end %>
 			</ul>
+			<% if !@late_reminders.empty? %>
+				<h2 class="text-center overdue_reminders_header">Overdue Reminders</h2>
+				<ul class="mdl-list mdl-shadow--2dp reminders_list">
+					<% @late_reminders.each do |reminder| %>
+						<li class="mdl-list__item mdl-list__item--two-line reminder_item">
+							<span class="mdl-list__item-primary-content">
+								<% if reminder.checked %>
+									<i class='material-icons mdl-list__item-icon'>done</i>
+								<% else %>
+									<%= link_to reminder, method: :patch do %>
+										<i class='material-icons mdl-list__item-icon'>crop_din</i>
+									<% end %>
+								<% end %>
+								<span><%= reminder.content %></span>
+								<span class="mdl-list__item-sub-title"><%= reminder.for_date.strftime("%D") %></span>
+							</span>
+						</li>
+					<% end %>
+				</ul>
+			<% end %>
+			
 			<%= link_to "reminders/new" do %><i class="material-icons add_reminder_icon">add_circle</i><% end %>
 <!-- 		</div> -->
 <!-- 	</div> -->

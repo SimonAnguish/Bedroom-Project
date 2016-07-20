@@ -2,12 +2,16 @@
 	<div class="content">
 		<%= form_for(@reminder) do |f| %>
 			<div class="field">
-				<%= f.label :reminder %><br>
-				<%= f.text_area :content %>
-				<%= f.date_field :for_date, min: Date.today, :value => Date.today %>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<%= f.text_area :content, :required => true, :rows => 5, :class => 'mdl-textfield__input' %>
+					<%= f.label :reminder, :class => 'mdl-textfield__label' %>
+				</div>
+				<div class="mdl-datefield">
+					<%= f.date_field :for_date, min: Date.today, :value => Date.today %>
+				</div>
 			</div>
 			<div class="actions">
-				<%= f.submit "Create" %>
+				<%= f.submit "Create", :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
 			</div>
 		<% end %>
 	</div>
