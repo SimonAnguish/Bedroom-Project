@@ -1,0 +1,16 @@
+<div class="bills_wrapper">
+		<ul class="mdl-list bill_list mdl-shadow--2dp">
+			<% @bills.each do |bill| %>
+				<li class="mdl-list__item mdl-list__item--two-line">
+					<span class="mdl-list__item-primary-content">
+						<span><%= bill.company %></span>
+						<span class="mdl-list__item-sub-title"><%= number_to_currency(bill.amount) %></span>
+					</span>
+					<%= bill.month %>
+				</li>
+			<% end %>
+		</ul>
+	<%= link_to "bills/new" do %>
+		<i class="material-icons">add_circle</i>
+	<% end %>
+</div>

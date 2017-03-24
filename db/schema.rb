@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718162952) do
+ActiveRecord::Schema.define(version: 20160721174357) do
+
+  create_table "bills", force: :cascade do |t|
+    t.date     "month"
+    t.float    "amount"
+    t.text     "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "news_stories", force: :cascade do |t|
     t.text     "headline"
@@ -25,6 +33,13 @@ ActiveRecord::Schema.define(version: 20160718162952) do
     t.boolean  "checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roommates", force: :cascade do |t|
+    t.text     "name"
+    t.float    "amount_owed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

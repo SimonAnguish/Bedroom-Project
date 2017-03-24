@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
 	def index
-		@reminders = Reminder.all.where("for_date >= ?", Date.today.to_s).order(:for_date)
-		@late_reminders = Reminder.all.where("for_date < ? and checked == 'False'", Date.today.to_s).order(for_date: :desc)
+		@reminders = Reminder.all.where(["for_date >= ?", Date.today]).order(:for_date)
+		@late_reminders = Reminder.all.where(["for_date < ? and NOT checked", Date.today]).order(for_date: :desc)
 	end
 	
 	def new

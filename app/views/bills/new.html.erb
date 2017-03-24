@@ -1,0 +1,19 @@
+<%= form_for(@bill) do |f| %>
+	<div class="field">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<%= f.month_field :month, :required => true, :class => 'mdl-textfield__input' %>
+			<%= f.label :month, :class => 'mdl-textfield__label' %>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<%= f.number_field :amount, :required => true, :class => 'mdl-textfield__input' %>
+			<%= f.label :amount, :class => 'mdl-textfield__label' %>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<%= f.text_field :company, :required => true, :class => 'mdl-textfield__input' %>
+			<%= f.label :company, :class => 'mdl-textfield__label' %>
+		</div>
+	
+	<div class="actions">
+		<%= f.submit "Create", :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' %>
+	</div>
+<% end %>
